@@ -26,10 +26,10 @@
   ];
 
   var mapOptions = {
-    zoom: 15,
+    zoom: 7,
     styles: styleArray,
-    center: new google.maps.LatLng(47.618217, -122.351832),
-    mapTypeId: google.maps.MapTypeId.STREET,
+    center: new google.maps.LatLng(47, -120),
+    mapTypeId: google.maps.MapTypeId.TERRAIN,
     zoomControl: true,
     zoomControlOptions: {
       position: google.maps.ControlPosition.RIGHT_CENTER
@@ -37,6 +37,14 @@
   };
 
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+  var myLatLng = {lat: 47, lng: -120};
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
+  });
 
   google.maps.event.addDomListener(window, 'resize', function() {
     var center = map.getCenter();
