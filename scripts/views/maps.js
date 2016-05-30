@@ -38,12 +38,15 @@
 
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-  var myLatLng = {lat: 47, lng: -120};
+  Location.all.forEach(function(location) {
+    var myLatLng = {lat: parseFloat(location.lat), lng: parseFloat(location.lng)};
+    console.log('we have markers');
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title: location.name
+    });
 
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Hello World!'
   });
 
   google.maps.event.addDomListener(window, 'resize', function() {
