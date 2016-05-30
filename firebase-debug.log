@@ -24,3 +24,16 @@
 [warn] !  No Firebase project directory detected. Serving static content from C:\Users\Jmalesh\cf\301\weather-or-not\weather-or-not
 [info] 
 [info] Server listening at: http://localhost:5000
+[debug] ----------------------------------------------------------------------
+[debug] Command:      C:\Program Files\nodejs\node.exe C:\Users\Jmalesh\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] CLI Version:  3.0.1
+[debug] Platform:     win32
+[debug] Node Version: v6.1.0
+[debug] Time:         Mon May 30 2016 10:56:35 GMT-0700 (Pacific Daylight Time)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[info] Starting Firebase development server...
+[info] 
+[warn] !  No Firebase project directory detected. Serving static content from C:\Users\Jmalesh\cf\301\weather-or-not\weather-or-not
+[info] 
+[info] Server listening at: http://localhost:5000
