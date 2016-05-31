@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="styles/maps.css">
 
   <title>GMaps Demo!</title>
@@ -15,13 +16,24 @@
         <h1>This is where the Logo goes</h1>
       </header>
 
+      <div class="autocomplete">
+        <label for="tags">Tags: </label>
+      <form class="hike-search">
+        <input id="tags" type="text">
+        <input type="submit" value="submit">
+      </div>
+      </form>
+
       <div id="map"></div>
 
 
 
 
     </main>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD29Glq4PNZfAy25qhsczeobL-rMrkhuck&v3.exp&libraties=visualization"></script>
+    <script src="vendor/scripts/jquery-2.1.4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWlA8SDgKt2X2jsbfW6eFNgBcGYUjL0zc&v3.exp&libraties=visualization,places"></script>
+    <script src="scripts/models/location.js"></script>
     <script src="scripts/views/maps.js"></script>
   </body>
 </html>

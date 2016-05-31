@@ -26,10 +26,10 @@
   ];
 
   var mapOptions = {
-    zoom: 15,
+    zoom: 7,
     styles: styleArray,
-    center: new google.maps.LatLng(47.618217, -122.351832),
-    mapTypeId: google.maps.MapTypeId.STREET,
+    center: new google.maps.LatLng(47, -120),
+    mapTypeId: google.maps.MapTypeId.TERRAIN,
     zoomControl: true,
     zoomControlOptions: {
       position: google.maps.ControlPosition.RIGHT_CENTER
@@ -38,10 +38,35 @@
 
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
+  var createsMarkers = function(location) {
+    var myLatLng = {lat: parseFloat(location.lat), lng: parseFloat(location.lng)};
+    console.log('we have markers');
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title: location.name
+    });
+  };
+
+  /////////////////////////////////////
+
+
+
+
+  ////////////////////////////////////
+
+// var filteredMap = Location.all.filter(function(location) {
+//   return location.rating > 4;
+// }).forEach(createsMarkers);
+
   google.maps.event.addDomListener(window, 'resize', function() {
     var center = map.getCenter();
     google.maps.event.trigger(map, 'resize');
     map.setCenter(center);
   });
 
-})();
+  module.map = map;
+  module.createsMarkers = createsMarkers;
+  module.mapOptions = mapOptions;
+
+})(window);
