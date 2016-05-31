@@ -46,18 +46,11 @@
       map: map,
       title: location.name
     });
+
+    marker.addListener('click', function(){
+      console.log(marker.title);
+    });
   };
-
-  /////////////////////////////////////
-
-
-
-
-  ////////////////////////////////////
-
-// var filteredMap = Location.all.filter(function(location) {
-//   return location.rating > 4;
-// }).forEach(createsMarkers);
 
   google.maps.event.addDomListener(window, 'resize', function() {
     var center = map.getCenter();

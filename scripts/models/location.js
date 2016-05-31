@@ -41,6 +41,7 @@ Location.all = [];
     console.log(matchingJsonLocation[0].lat, matchingJsonLocation[0].lng);
     map.setCenter(new google.maps.LatLng(matchingJsonLocation[0].lat, matchingJsonLocation[0].lng));
     map.setZoom(13);
+    getHikeWeatherForecast(matchingJsonLocation[0].lat, matchingJsonLocation[0].lng);
   });
 
   module.Location = Location;
