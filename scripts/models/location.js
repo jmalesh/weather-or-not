@@ -56,8 +56,10 @@ Location.all = [];
   };
 
     indexPage();
-});
 
+    getHikeWeatherForecast(matchingJsonLocation[0].lat, matchingJsonLocation[0].lng);
+
+});
   module.Location = Location;
 
 })(window);
