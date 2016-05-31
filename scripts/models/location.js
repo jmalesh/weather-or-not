@@ -5,7 +5,8 @@
     }
   }
 
-Location.all = [];
+  Location.all = [];
+  Location.matchingJsonLocation = [];
 
   Location.loadAll = function(dataWePass) {
     dataWePass.forEach(function(ele) {
@@ -27,39 +28,28 @@ Location.all = [];
     var availableTags = Location.all.map(function(location) {
       return location.name;
     });
-    $( "#tags" ).autocomplete({
+    $('#tags').autocomplete({
       source: availableTags
     });
+  };
+
+  Location.prototype.toHtml = function() {
+    var $hikeTemplateScript = $('#hike-template').html();
+    var hikeTemplate = Handlebars.compile($hikeTemplateScript);
+    var compiledTemplate = hikeTemplate(this);
+    return compiledTemplate;
   };
 
   $('.hike-search').on('submit', function(event) {
     event.preventDefault();
     var locationName = $('#tags').val();
-    var matchingJsonLocation = Location.all.filter(function(location) {
+    Location.matchingJsonLocation = Location.all.filter(function(location) {
       return location.name === locationName;
     });
-    console.log(matchingJsonLocation[0].lat, matchingJsonLocation[0].lng);
-    map.setCenter(new google.maps.LatLng(matchingJsonLocation[0].lat, matchingJsonLocation[0].lng));
+    console.log(Location.matchingJsonLocation[0].lat, Location.matchingJsonLocation[0].lng);
+    map.setCenter(new google.maps.LatLng(Location.matchingJsonLocation[0].lat, Location.matchingJsonLocation[0].lng));
     map.setZoom(13);
-
-    Location.prototype.toHtml = function() {
-      var $hikeTemplateScript = $('#hike-template').html();
-      var hikeTemplate = Handlebars.compile($hikeTemplateScript);
-      var compiledTemplate = hikeTemplate(this);
-      return compiledTemplate;
-    }
-
-    var indexPage = function() {
-    matchingJsonLocation.forEach(function(a) {
-      $('#hike-search').append(a.toHtml());
-    });
-  };
-
-    indexPage();
-
-    getHikeWeatherForecast(matchingJsonLocation[0].lat, matchingJsonLocation[0].lng);
-
-});
+  });
   module.Location = Location;
 
 })(window);
