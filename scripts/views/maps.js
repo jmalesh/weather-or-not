@@ -53,7 +53,6 @@
       });
 
       getHikeWeatherForecast(Location.matchingJsonLocation[0].lat, Location.matchingJsonLocation[0].lng);
-      console.log(marker.title);
 
       var indexPage = function() {
         console.log(Location.matchingJsonLocation);
