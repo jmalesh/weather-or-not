@@ -41,9 +41,25 @@ Location.all = [];
     console.log(matchingJsonLocation[0].lat, matchingJsonLocation[0].lng);
     map.setCenter(new google.maps.LatLng(matchingJsonLocation[0].lat, matchingJsonLocation[0].lng));
     map.setZoom(13);
-    getHikeWeatherForecast(matchingJsonLocation[0].lat, matchingJsonLocation[0].lng);
-  });
 
+    Location.prototype.toHtml = function() {
+      var $hikeTemplateScript = $('#hike-template').html();
+      var hikeTemplate = Handlebars.compile($hikeTemplateScript);
+      var compiledTemplate = hikeTemplate(this);
+      return compiledTemplate;
+    }
+
+    var indexPage = function() {
+    matchingJsonLocation.forEach(function(a) {
+      $('#hike-search').append(a.toHtml());
+    });
+  };
+
+    indexPage();
+
+    getHikeWeatherForecast(matchingJsonLocation[0].lat, matchingJsonLocation[0].lng);
+
+});
   module.Location = Location;
 
 })(window);

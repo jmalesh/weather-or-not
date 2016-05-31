@@ -7,6 +7,16 @@
 
   <title>GMaps Demo!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script id="hike-template" type="text/x-handlebars-template">
+      <h1>{{name}}</h1>
+      <ul>
+        <li>{{rating}}</li>
+        <li>{{length}}</li>
+        <li>{{elevGain}}</li>
+      </ul>
+  </script>
+
   </head>
 
 
@@ -25,12 +35,11 @@
       </form>
 
       <div id="map"></div>
-
-
-
+      <div id="hike-search"></div>
 
     </main>
     <script src="vendor/scripts/jquery-2.1.4.js"></script>
+    <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWlA8SDgKt2X2jsbfW6eFNgBcGYUjL0zc&v3.exp&libraties=visualization,places"></script>
     <script src="scripts/controllers/perHikeWeather.js"></script>
