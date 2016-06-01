@@ -1,0 +1,23 @@
+/*Hike Info*/
+#hike-overlay-container h1{
+  text-align: center;
+}
+
+#hike-overlay-container li{
+  margin: 0;
+  display: inline-block;
+  float: left;
+}
+
+
+/*Weather Info*/
+#weather-overlay-container{
+  display: inline-block;
+  width: 23%;
+  border: 1px solid white;
+}
+
+#weather-overlay-container li{
+  margin: 0;
+  padding: 0;
+}

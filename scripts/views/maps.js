@@ -57,12 +57,22 @@
         return location.name === marker.title;
       });
 
+
+      togglescroll();
+      $('.mobilenav').fadeToggle(500);
+      $('.top-menu').toggleClass('top-animate');
+      $('body').toggleClass('noscroll');
+      $('.mid-menu').toggleClass('mid-animate');
+      $('.bottom-menu').toggleClass('bottom-animate');
+      $('.icon').show();
+
+
       getHikeWeatherForecast(Location.matchingJsonLocation[0].lat, Location.matchingJsonLocation[0].lng);
 
       var indexPage = function() {
-        $('#hike-search').empty();
+        $('.mobilenav').empty();
         Location.matchingJsonLocation.forEach(function(a) {
-          $('#hike-search').append(a.toHtml());
+          $('.mobilenav').append(a.toHtml());
         });
       };
 
