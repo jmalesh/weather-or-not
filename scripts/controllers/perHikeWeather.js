@@ -20,8 +20,6 @@
 
     var weatherUrl = 'http://api.wunderground.com/api/4cad78aa1aa5f7ef/forecast/q/' + hikeLat + ',' + hikeLng + '.json';
 
-  // console.log(weatherUrl);
-
     $.ajax({
       url: weatherUrl,
       dataType: 'jsonp',
@@ -36,10 +34,7 @@
     });
 
     var weatherAppendIndexPage = function() {
-      // $('.mobilenav').empty();
-      console.log(Weather.all);
       Weather.all.forEach(function(a) {
-        console.log(a);
         $('.overlay-data').append(a.toAddHtml());
       });
     };

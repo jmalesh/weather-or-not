@@ -75,9 +75,15 @@
           $('.overlay-data').append(a.toHtml());
         });
       };
-
       indexPage();
     });
+  };
+
+  var initClustering = function() {
+    var options = {
+      imagePath: 'images/m'
+    };
+    var markerCluster = new MarkerClusterer(map, markersArray, options);
   };
 
   google.maps.event.addDomListener(window, 'resize', function() {
@@ -86,6 +92,7 @@
     map.setCenter(center);
   });
 
+  module.initClustering = initClustering;
   module.markersArray = markersArray;
   module.map = map;
   module.createsMarkers = createsMarkers;
