@@ -2,7 +2,8 @@
   var landingController = {};
 
   landingController.index = function() {
-    // $('#map-section').hide();
+    $('#map-section').hide();
+    $('#about-us-section').hide();
     $('#landing-info').fadeIn();
   };
 

@@ -3,6 +3,7 @@
 
   mapController.index = function() {
     $('#landing-info').hide();
+    $('#about-us-section').hide();
     $('#map-section').fadeIn();
   };
 

@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="styles/vendor/hamburgler.css">
     <link rel="stylesheet" href="styles/maps.css">
+    <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="styles/landing.css">
     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/modules/overlay.css">
     <title>Weather or Not</title>
@@ -39,10 +41,8 @@
   <body>
     <header id="nav-header">
       <ul class="nav-list">
-        <li class="logo"><a href="/">Logo</a></li>
-        <li class="home"><a href="/">Home</a></li>
+        <li class="logo"><a href="/"><img src="images/guy.png"/></a></li>
         <li class="browse"><a href="/browse">Browse Trails</a></li>
-        <li class="about"><a href="/about">About</a></li>
         <li class="search">
           <div class="autocomplete">
             <form class="hike-search">
@@ -68,18 +68,8 @@
 
     <main>
       <div id="landing-info">
-        <p>
-          There is where we put some shit!
-        </p>
-        <p>
-          asdfasdfasdfsad
-        </p>
-        <p>
-          asdfasdfasdfsa
-        </p>
-        <p>
-          asdfasdfasdfsadfsadfsadf
-        </p>
+        <h1>Weather or Not</h1>
+        <p>There is where we put some shit!</p>
       </div>
 
       <section id="map-section">
@@ -88,7 +78,19 @@
         <div id="weather-search"></div>
       </section>
 
+      <div id="about-us-section">
+        <p>Jeremy</p>
+        <p>Jess</p>
+        <p>Sung</p>
+        <p>Jeff</p>
+      </div>
+
     </main>
+
+    <footer id="nav-footer">
+      <p><a href="/about">About the Team</a></p>
+      <p>Copyright &#169; 2016 </p>
+    </footer>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -100,6 +102,7 @@
     <script src="scripts/views/maps.js"></script>
     <script src="scripts/controllers/landingController.js"></script>
     <script src="scripts/controllers/mapController.js"></script>
+    <script src="scripts/controllers/aboutController.js"></script>
     <script src="scripts/controllers/routes.js"></script>
   </body>
 </html>
