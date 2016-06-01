@@ -2,29 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-  <link rel="stylesheet" href="styles/maps.css">
+    <link rel="stylesheet" href="styles/reset.css">  
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="styles/maps.css">
 
-  <title>Weather or Not</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather or Not</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script id="hike-template" type="text/x-handlebars-template">
-      <h1>Trail Name: {{name}}</h1>
-      <ul>
-        <li>Train Rating: {{rating}}</li>
-        <li>Train Length: {{length}}</li>
-        <li>Trail Elevation: {{elevGain}}</li>
-      </ul>
-  </script>
+    <script id="hike-template" type="text/x-handlebars-template">
+        <h1>Trail Name: {{name}}</h1>
+        <ul>
+          <li>Train Rating: {{rating}}</li>
+          <li>Train Length: {{length}}</li>
+          <li>Trail Elevation: {{elevGain}}</li>
+        </ul>
+    </script>
 
-  <script id="weather-template" type="text/x-handlebars-template">
-    <h1>Day: {{title}}<h1>
-      <ul>
-        <li>{{icon}}</li>
-        <li>{{icon_url}}</li>
-        <li>{{fcttext}}</li>
-      </ul>
-  </script>
+    <script id="weather-template" type="text/x-handlebars-template">
+      <h1>Day: {{title}}<h1>
+        <ul>
+          <li>{{icon}}</li>
+          <li>{{icon_url}}</li>
+          <li>{{fcttext}}</li>
+        </ul>
+    </script>
 
   </head>
 
