@@ -13,23 +13,13 @@
     dataWePass.forEach(function(ele) {
       Location.all.push(new Location(ele));
     });
+    Location.all.forEach(createsMarkers);
+    initClustering();
   };
 
   Location.fetchAll = function() {
     $.getJSON('data/hikes.json', function(data) {
       Location.loadAll(data);
-
-      // Location.all.forEach(createsMarkers);
-      for (var i = 0; i < Location.all.length; i++) {
-        var m = Location.all[i];
-
-        (function(n) {
-          setTimeout(function() {
-            createsMarkers(n);
-          }, i * 1);
-        }(m));
-      }
-
       Location.setUpAutoComplete();
     });
   };
@@ -73,7 +63,6 @@
 
     // Location.foundMarker[0].setIcon('/images/blue-tree_160.png');
 
-    // console.log(Location.matchingJsonLocation[0].lat, Location.matchingJsonLocation[0].lng);
     map.setCenter(new google.maps.LatLng(Location.matchingJsonLocation[0].lat, Location.matchingJsonLocation[0].lng));
     map.setZoom(13);
     $('#tags').val('');
