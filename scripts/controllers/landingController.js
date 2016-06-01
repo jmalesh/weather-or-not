@@ -3,7 +3,7 @@
 
   landingController.index = function() {
     // $('#map-section').hide();
-    $('#landing-info').fadeIn();
+    $('#landing-info').fadeIn().siblings().hide();
   };
 
   module.landingController = landingController;
