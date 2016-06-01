@@ -1,5 +1,7 @@
 (function(module) {
 
+  var markersArray = [];
+
   var styleArray = [
     {
       featureType: 'all',
@@ -40,24 +42,33 @@
 
   var createsMarkers = function(location) {
     var myLatLng = {lat: parseFloat(location.lat), lng: parseFloat(location.lng)};
-    console.log('we have markers');
     var marker = new google.maps.Marker({
       position: myLatLng,
       map: map,
-      title: location.name
+      title: location.name,
+    });
+
+    // marker.setIcon('/images/yellow-tree_160.png');
+
+    markersArray.push(marker);
+
+    marker.addListener('click', function(){
+      Location.matchingJsonLocation = Location.all.filter(function(location) {
+        return location.name === marker.title;
+      });
+
+      getHikeWeatherForecast(Location.matchingJsonLocation[0].lat, Location.matchingJsonLocation[0].lng);
+
+      var indexPage = function() {
+        $('#hike-search').empty();
+        Location.matchingJsonLocation.forEach(function(a) {
+          $('#hike-search').append(a.toHtml());
+        });
+      };
+
+      indexPage();
     });
   };
-
-  /////////////////////////////////////
-
-
-
-
-  ////////////////////////////////////
-
-// var filteredMap = Location.all.filter(function(location) {
-//   return location.rating > 4;
-// }).forEach(createsMarkers);
 
   google.maps.event.addDomListener(window, 'resize', function() {
     var center = map.getCenter();
@@ -65,6 +76,7 @@
     map.setCenter(center);
   });
 
+  module.markersArray = markersArray;
   module.map = map;
   module.createsMarkers = createsMarkers;
   module.mapOptions = mapOptions;
