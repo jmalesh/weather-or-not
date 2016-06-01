@@ -36,11 +36,11 @@
     });
 
     var weatherAppendIndexPage = function() {
-      $('#weather-search').empty();
+      // $('.mobilenav').empty();
       console.log(Weather.all);
       Weather.all.forEach(function(a) {
         console.log(a);
-        $('#weather-search').append(a.toAddHtml());
+        $('.overlay-data').append(a.toAddHtml());
       });
     };
 

@@ -2,30 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/vendor/reset.css">
     <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="styles/vendor/hamburgler.css">
     <link rel="stylesheet" href="styles/maps.css">
     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/modules/overlay.css">
     <title>Weather or Not</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script id="hike-template" type="text/x-handlebars-template">
+      <div id="hike-overlay-container">
         <h1>Trail Name: {{name}}</h1>
         <ul>
           <li>Train Rating: {{rating}}</li>
           <li>Train Length: {{length}}</li>
           <li>Trail Elevation: {{elevGain}}</li>
         </ul>
+      </div>
     </script>
 
     <script id="weather-template" type="text/x-handlebars-template">
-      <h1>Day: {{title}}<h1>
+      <div id="weather-overlay-container">
+        <h1>Day: {{title}}<h1>
         <ul>
-          <li>{{icon}}</li>
-          <li>{{icon_url}}</li>
+          <li><img src="{{icon_url}}"></li>
           <li>{{fcttext}}</li>
         </ul>
+      </div>
     </script>
 
   </head>
@@ -48,6 +53,18 @@
         </li>
       </ul>
     </header>
+
+    <div class="mobilenav">
+      <div class="overlay-data"></div>
+    </div>
+
+    <a href="javascript:void(0)" class="icon">
+      <div class="hamburger">
+      <div class="menui top-menu"></div>
+      <div class="menui mid-menu"></div>
+      <div class="menui bottom-menu"></div>
+      </div>
+    </a>
 
     <main>
       <div id="landing-info">
@@ -72,11 +89,12 @@
       </section>
 
     </main>
-    <script src="vendor/scripts/jquery-2.1.4.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWlA8SDgKt2X2jsbfW6eFNgBcGYUjL0zc&v3.exp&libraties=visualization,places"></script>
+    <script src="scripts/vendor/hamburgler.js"></script>
     <script src="scripts/controllers/perHikeWeather.js"></script>
     <script src="scripts/models/location.js"></script>
     <script src="scripts/views/maps.js"></script>
