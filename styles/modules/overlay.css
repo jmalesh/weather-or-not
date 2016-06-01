@@ -1,3 +1,10 @@
+.overlay-data{
+  position: static;
+}
+.noscroll {
+  overflow: hidden;
+}
+
 /*Hike Info*/
 #hike-overlay-container h1{
   text-align: center;
@@ -13,7 +20,7 @@
 /*Weather Info*/
 #weather-overlay-container{
   display: inline-block;
-  width: 23%;
+  width: 100%;
   border: 1px solid white;
 }
 

@@ -70,9 +70,9 @@
       getHikeWeatherForecast(Location.matchingJsonLocation[0].lat, Location.matchingJsonLocation[0].lng);
 
       var indexPage = function() {
-        $('.mobilenav').empty();
+        $('.overlay-data').empty();
         Location.matchingJsonLocation.forEach(function(a) {
-          $('.mobilenav').append(a.toHtml());
+          $('.overlay-data').append(a.toHtml());
         });
       };
 
