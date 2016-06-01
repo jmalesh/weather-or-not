@@ -5,6 +5,7 @@
   position: fixed;
   top: 0;
   z-index: 1;
+  background-color: #9cbaf0;
 }
 
 .nav-list {
