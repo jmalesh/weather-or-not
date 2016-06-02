@@ -7,7 +7,8 @@
     } else {
       mapView.populateMap(mapView.initClustering);
     }
-    $('#landing-info').fadeIn().siblings().hide();
+    $('#right-side').fadeIn().siblings().hide();
+
   };
 
   module.landingController = landingController;
