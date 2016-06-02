@@ -49,14 +49,12 @@
       title: location.name,
     });
 
-    // marker.setIcon('/images/yellow-tree_160.png');
+    marker.setIcon('http://maps.gstatic.com/mapfiles/markers2/marker.png');
 
     hikingMap.markersArray.push(marker);
 
     marker.addListener('click', function(){
-      Location.matchingJsonLocation = Location.all.filter(function(location) {
-        return location.name === marker.title;
-      });
+      changeIcon(marker.title);
 
       togglescroll();
       $('.mobilenav').fadeToggle(500);

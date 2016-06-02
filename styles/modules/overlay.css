@@ -9,14 +9,23 @@
 #hike-overlay-container {
   border-bottom: 1px solid white;
 }
-#hike-overlay-container h1{
+
+
+.mobilenav h1{
   text-align: center;
+  padding-top: 0;
+  padding-right: 0;
+  margin-top: 10px;
 }
+
 
 #hike-overlay-container li{
   margin: 0;
   display: inline-block;
-  /*float: left;*/
+}
+
+#hike-overlay-container ul {
+  text-align: center;
 }
 
 
@@ -28,6 +37,6 @@
 }
 
 #weather-overlay-container li{
-  margin: 0;
+  margin: 0 4px 5px 0;
   padding: 0;
 }

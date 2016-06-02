@@ -18,5 +18,15 @@ height: 100%;
 margin: 10%;
 text-align: center;
 margin: 10%;
-color: #143109 ;
+color: #143109;
+}
+
+#landing-info h1 {
+  padding-right: 2px;
+  padding-left: 2px;
+}
+
+#landing-info p {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
 }
