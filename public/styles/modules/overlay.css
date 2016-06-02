@@ -5,6 +5,10 @@
   overflow: hidden;
 }
 
+.mobilenav{
+  -webkit-overflow-scrolling: touch;
+}
+
 /*Hike Info*/
 #hike-overlay-container {
   border-bottom: 1px solid white;

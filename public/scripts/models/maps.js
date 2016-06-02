@@ -56,13 +56,14 @@
     marker.addListener('click', function(){
       changeIcon(marker.title);
 
-      togglescroll();
+      // togglescroll();
       $('.mobilenav').fadeToggle(500);
       $('.top-menu').toggleClass('top-animate');
       $('body').toggleClass('noscroll');
       $('.mid-menu').toggleClass('mid-animate');
       $('.bottom-menu').toggleClass('bottom-animate');
       $('.icon').show();
+
 
       Weather.getHikeWeatherForecast(Location.matchingJsonLocation[0].lat, Location.matchingJsonLocation[0].lng);
 

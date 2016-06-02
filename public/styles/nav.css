@@ -18,6 +18,8 @@ body {
 
 #tags{
   font-size: 1em;
+  width: 170px;
+  border-radius: 5px;
 }
 
 #tags-submit{
@@ -27,7 +29,6 @@ body {
   color: white;*/
   font-size: 1em;
   display: block;
-  width: 195px;
   margin-top: 2px;
 }
 
@@ -52,6 +53,7 @@ body {
   font-family: Helvetica, Arial, Sans-Serif;
   text-decoration: none;
   vertical-align: middle;
+  width: 175px;
   }
 #tags-submit:hover {
   border-top-color: #28597a ;
