@@ -9,7 +9,9 @@
   };
 
   mapView.populateMap = function(next) {
-    Location.all.forEach(hikingMap.createsMarkers);
+    if(hikingMap.markersArray.length === 0) {
+      Location.all.forEach(hikingMap.createsMarkers);
+    };
     next();
   };
 

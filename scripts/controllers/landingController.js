@@ -1,13 +1,12 @@
 (function(module) {
   var landingController = {};
 
-  if (Location.all.length === 0) {
-    Location.fetchAll();
-  } else {
-    mapView.populateMap(mapView.initClustering);
-  }
-
   landingController.index = function() {
+    if (Location.all.length === 0) {
+      Location.fetchAll();
+    } else {
+      mapView.populateMap(mapView.initClustering);
+    }
     $('#landing-info').fadeIn().siblings().hide();
   };
 
