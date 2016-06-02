@@ -1,8 +1,8 @@
 (function(module) {
 
-  var markersArray = [];
+  var hikingMap = {};
 
-  var styleArray = [
+  hikingMap.styleArray = [
     {
       featureType: 'all',
       stylers: [
@@ -27,9 +27,9 @@
     }
   ];
 
-  var mapOptions = {
+  hikingMap.mapOptions = {
     zoom: 7,
-    styles: styleArray,
+    styles: hikingMap.styleArray,
     center: new google.maps.LatLng(47, -120),
     mapTypeId: google.maps.MapTypeId.TERRAIN,
     zoomControl: true,
@@ -38,25 +38,25 @@
     },
   };
 
-  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  hikingMap.map = new google.maps.Map(document.getElementById('map'), hikingMap.mapOptions);
+  hikingMap.markersArray = [];
 
-  var createsMarkers = function(location) {
+  hikingMap.createsMarkers = function(location) {
     var myLatLng = {lat: parseFloat(location.lat), lng: parseFloat(location.lng)};
     var marker = new google.maps.Marker({
       position: myLatLng,
-      map: map,
+      map: hikingMap.map,
       title: location.name,
     });
 
     // marker.setIcon('/images/yellow-tree_160.png');
 
-    markersArray.push(marker);
+    hikingMap.markersArray.push(marker);
 
     marker.addListener('click', function(){
       Location.matchingJsonLocation = Location.all.filter(function(location) {
         return location.name === marker.title;
       });
-
 
       togglescroll();
       $('.mobilenav').fadeToggle(500);
@@ -66,36 +66,18 @@
       $('.bottom-menu').toggleClass('bottom-animate');
       $('.icon').show();
 
+      Weather.getHikeWeatherForecast(Location.matchingJsonLocation[0].lat, Location.matchingJsonLocation[0].lng);
 
-      getHikeWeatherForecast(Location.matchingJsonLocation[0].lat, Location.matchingJsonLocation[0].lng);
-
-      var indexPage = function() {
-        $('.overlay-data').empty();
-        Location.matchingJsonLocation.forEach(function(a) {
-          $('.overlay-data').append(a.toHtml());
-        });
-      };
-      indexPage();
+      overlayData.indexPage();
     });
   };
 
-  var initClustering = function() {
-    var options = {
-      imagePath: 'images/m'
-    };
-    var markerCluster = new MarkerClusterer(map, markersArray, options);
-  };
-
   google.maps.event.addDomListener(window, 'resize', function() {
-    var center = map.getCenter();
+    var center = hikingMap.map.getCenter();
     google.maps.event.trigger(map, 'resize');
-    map.setCenter(center);
+    hikingMap.map.setCenter(center);
   });
 
-  module.initClustering = initClustering;
-  module.markersArray = markersArray;
-  module.map = map;
-  module.createsMarkers = createsMarkers;
-  module.mapOptions = mapOptions;
+  module.hikingMap = hikingMap;
 
 })(window);
