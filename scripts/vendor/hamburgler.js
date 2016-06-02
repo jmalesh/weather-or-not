@@ -9,7 +9,6 @@ function togglescroll () {
   });
 }
 
-
 $(document).ready(function() {
   $('.icon').on('click touchstart', function(e) {
     $('.mobilenav').fadeToggle(500);

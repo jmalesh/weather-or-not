@@ -18,8 +18,8 @@
       <div id="hike-overlay-container">
         <h1>Trail Name: {{name}}</h1>
         <ul>
-          <li>Train Rating: {{rating}}</li>
-          <li>Train Length: {{length}}</li>
+          <li>Trail Rating: {{rating}}</li>
+          <li>Trail Length: {{length}}</li>
           <li>Trail Elevation: {{elevGain}}</li>
         </ul>
       </div>
@@ -68,11 +68,11 @@
 
     <main>
 
-      <div id="landing-info">
+      <section id="landing-info">
         <h1>Having trouble deciding *Weather or Not* to go for a hike?</h1>
 
         <p>Search your favorite trails here, or browse by area</p>
-      </div>
+      </section>
 
       <section id="map-section">
         <div id="map"></div>
@@ -80,12 +80,12 @@
         <div id="weather-search"></div>
       </section>
 
-      <div id="about-us-section">
+      <section id="about-us-section">
         <p>Jeremy</p>
         <p>Jess</p>
         <p>Sung</p>
         <p>Jeff</p>
-      </div>
+      </section>
 
     </main>
 
@@ -93,7 +93,7 @@
       <p><a href="/about">About the Team</a></p>
       <p>Copyright &#169; 2016 </p>
     </footer>
-
+    <!-- vendor scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
@@ -101,9 +101,15 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWlA8SDgKt2X2jsbfW6eFNgBcGYUjL0zc&v3.exp&libraties=visualization,places"></script>
     <script src="scripts/vendor/markerclusterer.js"></script>
     <script src="scripts/vendor/hamburgler.js"></script>
-    <script src="scripts/controllers/perHikeWeather.js"></script>
+    <!-- model -->
+    <script src="scripts/models/perHikeWeather.js"></script>
     <script src="scripts/models/location.js"></script>
-    <script src="scripts/views/maps.js"></script>
+    <script src="scripts/models/maps.js"></script>
+    <!-- view -->
+    <script src="scripts/views/mapsView.js"></script>
+    <script src="scripts/views/searchHikeView.js"></script>
+    <script src="scripts/views/overlayDataView.js"></script>
+    <!-- controller -->
     <script src="scripts/controllers/landingController.js"></script>
     <script src="scripts/controllers/mapController.js"></script>
     <script src="scripts/controllers/aboutController.js"></script>

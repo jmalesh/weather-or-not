@@ -13,8 +13,7 @@
     dataWePass.forEach(function(ele) {
       Location.all.push(new Location(ele));
     });
-    Location.all.forEach(createsMarkers);
-    initClustering();
+    mapView.populateMap(mapView.initClustering);
   };
 
   Location.fetchAll = function() {
@@ -23,8 +22,6 @@
       Location.setUpAutoComplete();
     });
   };
-
-  Location.fetchAll();
 
   Location.setUpAutoComplete = function() {
     var availableTags = Location.all.map(function(location) {
@@ -42,31 +39,6 @@
     return compiledTemplate;
   };
 
-  $('.hike-search').on('submit', function(event) {
-    event.preventDefault();
-
-    $('#hike-search').empty();
-
-    var locationName = $('#tags').val();
-
-    Location.matchingJsonLocation = Location.all.filter(function(location) {
-      return location.name === locationName;
-    });
-
-    if(Location.foundMarker.length === 1) {
-      // Location.foundMarker[0].setIcon('/images/yellow-tree_160.png');
-    }
-
-    Location.foundMarker = markersArray.filter(function(marker) {
-      return marker.title === Location.matchingJsonLocation[0].name;
-    });
-
-    // Location.foundMarker[0].setIcon('/images/blue-tree_160.png');
-
-    map.setCenter(new google.maps.LatLng(Location.matchingJsonLocation[0].lat, Location.matchingJsonLocation[0].lng));
-    map.setZoom(13);
-    $('#tags').val('');
-  });
   module.Location = Location;
 
 })(window);

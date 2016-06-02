@@ -3,15 +3,17 @@
 
   mapController.index = function() {
 
-    $('#landing-info').hide();
-    $('#about-us-section').hide();
+    if (Location.all.length === 0) {
+      Location.fetchAll();
+    } else {
+      mapView.populateMap(mapView.initClustering);
+    }
     $('#map-section').fadeIn(function(){
       google.maps.event.trigger(map, 'resize');
       var center = new google.maps.LatLng(47, -120);
-      map.setCenter(center);
-      map.setZoom(7);
+      hikingMap.map.setCenter(center);
+      hikingMap.map.setZoom(7);
     }).siblings().hide();
-
   };
 
   module.mapController = mapController;
