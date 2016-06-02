@@ -8,7 +8,6 @@
       mapView.populateMap(mapView.initClustering);
     }
     $('#right-side').fadeIn().siblings().hide();
-
   };
 
   module.landingController = landingController;

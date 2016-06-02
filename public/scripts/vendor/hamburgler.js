@@ -1,4 +1,3 @@
-// HAMBURGLERv2
 $('.icon').hide();
 
 function togglescroll () {
