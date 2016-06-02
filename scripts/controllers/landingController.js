@@ -2,8 +2,13 @@
   var landingController = {};
 
   landingController.index = function() {
-    $('#map-section').hide();
-    $('#landing-info').fadeIn();
+    if (Location.all.length === 0) {
+      Location.fetchAll();
+    } else {
+      mapView.populateMap(mapView.initClustering);
+    }
+    $('#right-side').fadeIn().siblings().hide();
+
   };
 
   module.landingController = landingController;

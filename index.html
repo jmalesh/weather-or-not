@@ -2,30 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/vendor/reset.css">
+    <link rel="stylesheet" href="styles/vendor/hamburgler.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/landing.css">
     <link rel="stylesheet" href="styles/maps.css">
+    <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="styles/modules/overlay.css">
+    <link rel="stylesheet" href="styles/layout.css">
+
+
     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
     <title>Weather or Not</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script id="hike-template" type="text/x-handlebars-template">
+      <div id="hike-overlay-container">
         <h1>Trail Name: {{name}}</h1>
         <ul>
-          <li>Train Rating: {{rating}}</li>
-          <li>Train Length: {{length}}</li>
+          <li>Trail Rating: {{rating}}</li>
+          <li>Trail Length: {{length}}</li>
           <li>Trail Elevation: {{elevGain}}</li>
         </ul>
+      </div>
     </script>
 
     <script id="weather-template" type="text/x-handlebars-template">
-      <h1>Day: {{title}}<h1>
+      <div id="weather-overlay-container">
+        <h1>{{title}}<h1>
         <ul>
-          <li>{{icon}}</li>
-          <li>{{icon_url}}</li>
+          <li><img src="{{icon_url}}"></li>
           <li>{{fcttext}}</li>
         </ul>
+      </div>
     </script>
 
   </head>
@@ -34,54 +47,75 @@
   <body>
     <header id="nav-header">
       <ul class="nav-list">
-        <li class="logo"><a href="/">Logo</a></li>
-        <li class="home"><a href="/">Home</a></li>
-        <li class="browse"><a href="/browse">Browse Trails</a></li>
-        <li class="about"><a href="/about">About</a></li>
+        <li class="logo"><a href="/"><img src="images/hiker-small.png"></a></li>
         <li class="search">
           <div class="autocomplete">
             <form class="hike-search">
-              <input id="tags" type="text" placeholder="Search Trail">
-              <input type="submit" value="submit">
+              <input id="tags" type="text" placeholder="Search for a trail..." required>
+              <input id="tags-submit" type="submit" value="Submit">
             </form>
           </div>
         </li>
+        <li class="browse">
+          <a href="/browse"><img src="images/mapIcon.png"><br />Browse</a>
+      </li>
       </ul>
     </header>
 
-    <main>
-      <div id="landing-info">
-        <p>
-          There is where we put some shit!
-        </p>
-        <p>
-          asdfasdfasdfsad
-        </p>
-        <p>
-          asdfasdfasdfsa
-        </p>
-        <p>
-          asdfasdfasdfsadfsadfsadf
-        </p>
-      </div>
+    <div class="mobilenav">
+      <div class="overlay-data"></div>
+    </div>
 
-      <section id="map-section">
-        <div id="map"></div>
-        <div id="hike-search"></div>
-        <div id="weather-search"></div>
-      </section>
+    <a href="javascript:void(0)" class="icon">
+      <div class="hamburger">
+      <div class="menui top-menu"></div>
+      <div class="menui mid-menu"></div>
+      <div class="menui bottom-menu"></div>
+      </div>
+    </a>
+
+    <main>
+
+      <section id="right-side">
+
+       <div id="landing-info">
+         <h1>Having trouble deciding<br /> *Weather or Not*<br />to go for a hike?</h1>
+
+         <p>Search your favorite trails here, or click the map to browse all trails!</p>
+       </div>
+     </section>
+
+       <section id="map-section">
+         <div id="map"></div>
+         <div id="hike-search"></div>
+         <div id="weather-search"></div>
+       </section>
+
+       <aside class="space">
+       </aside>
 
     </main>
-    <script src="vendor/scripts/jquery-2.1.4.js"></script>
+
+    <!-- vendor scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWlA8SDgKt2X2jsbfW6eFNgBcGYUjL0zc&v3.exp&libraties=visualization,places"></script>
-    <script src="scripts/controllers/perHikeWeather.js"></script>
+    <script src="scripts/vendor/markerclusterer.js"></script>
+    <script src="scripts/vendor/hamburgler.js"></script>
+    <!-- model -->
+    <script src="scripts/models/perHikeWeather.js"></script>
     <script src="scripts/models/location.js"></script>
-    <script src="scripts/views/maps.js"></script>
+    <script src="scripts/models/maps.js"></script>
+    <!-- view -->
+    <script src="scripts/views/mapsView.js"></script>
+    <script src="scripts/views/searchHikeView.js"></script>
+    <script src="scripts/views/overlayDataView.js"></script>
+    <!-- controller -->
     <script src="scripts/controllers/landingController.js"></script>
     <script src="scripts/controllers/mapController.js"></script>
+    <script src="scripts/controllers/aboutController.js"></script>
     <script src="scripts/controllers/routes.js"></script>
   </body>
 </html>
