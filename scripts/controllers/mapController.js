@@ -5,6 +5,7 @@
     if (Location.all.length === 0) {
       Location.fetchAll();
     }
+    $('.space').hide();
     $('#map-section').fadeIn(function(){
       google.maps.event.trigger(map, 'resize');
       var center = new google.maps.LatLng(47, -120);

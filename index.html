@@ -11,8 +11,11 @@
     <link rel="stylesheet" href="styles/maps.css">
     <link rel="stylesheet" href="styles/about.css">
     <link rel="stylesheet" href="styles/modules/overlay.css">
+    <link rel="stylesheet" href="styles/layout.css">
+
 
     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
     <title>Weather or Not</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,7 +47,7 @@
   <body>
     <header id="nav-header">
       <ul class="nav-list">
-        <li class="logo"><a href="/"><img src="images/guy.png"></a></li>
+        <li class="logo"><a href="/"><img src="images/hiker-small.png"></a></li>
         <li class="search">
           <div class="autocomplete">
             <form class="hike-search">
@@ -54,10 +57,7 @@
           </div>
         </li>
         <li class="browse">
-          <a href="/browse">
-            <img src="images/mapIcon.png">
-            <!-- Browse Trails -->
-          </a>
+          <a href="/browse"><img src="images/mapIcon.png"><br />Browse</a>
       </li>
       </ul>
     </header>
@@ -76,22 +76,23 @@
 
     <main>
 
-      <section id="landing-info">
-        <p>Having trouble deciding 'Weather or Not' to go for a hike? Search your favorite trails here, or browse all of the trails!</p>
-      </section>
+      <section id="right-side">
 
-      <section id="map-section">
-        <div id="map"></div>
-        <div id="hike-search"></div>
-        <div id="weather-search"></div>
-      </section>
+       <div id="landing-info">
+         <h1>Having trouble deciding<br /> *Weather or Not*<br />to go for a hike?</h1>
 
-      <section id="about-us-section">
-        <p>Jeremy</p>
-        <p>Jess</p>
-        <p>Sung</p>
-        <p>Jeff</p>
-      </section>
+         <p>Search your favorite trails here, or click the map to browse all trails!</p>
+       </div>
+     </section>
+
+       <section id="map-section">
+         <div id="map"></div>
+         <div id="hike-search"></div>
+         <div id="weather-search"></div>
+       </section>
+
+       <aside class="space">
+       </aside>
 
     </main>
 
