@@ -2,11 +2,8 @@
   var mapController = {};
 
   mapController.index = function() {
-
     if (Location.all.length === 0) {
       Location.fetchAll();
-    } else {
-      mapView.populateMap(mapView.initClustering);
     }
     $('#map-section').fadeIn(function(){
       google.maps.event.trigger(map, 'resize');
