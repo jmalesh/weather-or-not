@@ -18,7 +18,7 @@
   Weather.getHikeWeatherForecast = function(hikeLat, hikeLng) {
     'use strict';
 
-    var weatherUrl = 'https://api.wunderground.com/api/4cad78aa1aa5f7ef/forecast/q/' + hikeLat + ',' + hikeLng + '.json';
+    var weatherUrl = 'http://api.wunderground.com/api/4cad78aa1aa5f7ef/forecast/q/' + hikeLat + ',' + hikeLng + '.json';
 
     $.ajax({
       url: weatherUrl,
