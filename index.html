@@ -12,17 +12,19 @@
     <link rel="stylesheet" href="styles/about.css">
     <link rel="stylesheet" href="styles/modules/overlay.css">
     <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="/styles/states/desktop.css" media="screen and (min-width: )" title="no title" charset="utf-8">
 
 
     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
     <title>Weather or Not</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script id="hike-template" type="text/x-handlebars-template">
       <div id="hike-overlay-container">
-        <h1>Trail Name: {{name}}</h1>
+        <h1>{{name}}</h1>
         <ul>
           <li>Trail Rating: {{rating}}</li>
           <li>Trail Length: {{length}}</li>
@@ -33,7 +35,7 @@
 
     <script id="weather-template" type="text/x-handlebars-template">
       <div id="weather-overlay-container">
-        <h1>{{title}}<h1>
+        <h1>{{title}}</h1>
         <ul>
           <li><img src="{{icon_url}}"></li>
           <li>{{fcttext}}</li>
@@ -79,7 +81,7 @@
       <section id="right-side">
 
        <div id="landing-info">
-         <h1>Having trouble deciding<br /> *Weather or Not*<br />to go for a hike?</h1>
+         <h1>Having trouble deciding<br />*Weather or Not*<br />to go for a hike?</h1>
 
          <p>Search your favorite trails here, or click the map to browse all trails!</p>
        </div>
