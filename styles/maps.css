@@ -1,7 +1,16 @@
 #map {
-  padding-top: 100%;
-  padding-bottom: 100%;
-  margin-top: 40px;
+  /*padding-top: 50%;
+  padding-bottom: 100%;*/
+  /*margin-top: 40px;*/
+  max-width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
   /*margin-bottom: 40px;*/
   border: .5px solid black;
+}
+
+html, body, main, #map-section {
+  max-width: 100%;
+  height: 100%;
 }
