@@ -5,11 +5,9 @@
   overflow: hidden;
 }
 
-/*Hike Info*/
 #hike-overlay-container {
   border-bottom: 1px solid white;
 }
-
 
 .mobilenav h1{
   text-align: center;
@@ -17,7 +15,6 @@
   padding-right: 0;
   margin-top: 10px;
 }
-
 
 #hike-overlay-container li{
   margin: 0;
@@ -28,8 +25,6 @@
   text-align: center;
 }
 
-
-/*Weather Info*/
 #weather-overlay-container{
   display: inline-block;
   width: 100%;

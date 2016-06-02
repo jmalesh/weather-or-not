@@ -56,7 +56,6 @@
     marker.addListener('click', function(){
       changeIcon(marker.title);
 
-      // togglescroll();
       $('.mobilenav').fadeToggle(500);
       $('.top-menu').toggleClass('top-animate');
       $('body').toggleClass('noscroll');
